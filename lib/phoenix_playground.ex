@@ -186,7 +186,7 @@ defmodule PhoenixPlayground do
     endpoint_options =
       [
         adapter: Bandit.PhoenixAdapter,
-        http: [ip: {127, 0, 0, 1}, port: options[:port]],
+        http: [ip: :any, port: options[:port]], # {127, 0, 0, 1}
         server: !!options[:port],
         live_view: [signing_salt: @signing_salt],
         secret_key_base: @secret_key_base,
